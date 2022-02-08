@@ -11,7 +11,6 @@ class Cart(object):
         request = { session, headers,body,}
         session = {cart, modified}
 
-        cart dictionay will look like this
         cart = {
             'product_id': {'price': price, 'quantity': quantity},
         }
