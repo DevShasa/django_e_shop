@@ -63,7 +63,7 @@ class Cart(object):
 
         cart = self.cart.copy()
         for product in products:
-            # Add a product field to cart
+            # Append modelproduct to cartproduct as "product"
             cart[str(product.id)]['product'] = product
         
         for item in cart.values():
