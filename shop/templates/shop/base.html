@@ -12,7 +12,15 @@
         </div>
         <div id="subheader">
             <div class="cart">
-                Your cart is empty
+                {% comment %} <span>{{cart.get_total_price}}</span> {% endcomment %}
+                {% if cart|length > 0 %}
+                    Your cart: <a href="{% url 'cart:cart_detail' %}">
+                        {{cart|length}} item{{cart|length|pluralize}},  
+                        ${{cart.get_total_price}}
+                    </a>
+                {% else %}
+                    Your cart is empty
+                {% endif %}
             </div>
         </div>
         <div id="content">
