@@ -199,6 +199,8 @@ ul.errorlist {
     display: flex;
     flex-direction:column;
     justify-content: space-between;
+    border-radius: 5px;
+    border: 0.5px solid rgb(172, 172, 172);
 }
 
 .product-display .item img {
