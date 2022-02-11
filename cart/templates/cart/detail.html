@@ -29,7 +29,7 @@
                         </td>
                         <td>{{ product.name }}</td>
                         <td>
-                            <form action="{% url "cart:cart_add" product.id%}" method="post">
+                            <form action="{% url "cart:cart_add" product.id %}" method="post">
                                 {{ item.update_quantity_form.quantity }}
                                 {{ item.update_quantity_form.override }}
                                 <input type="submit" value="Update">
@@ -58,6 +58,8 @@
         <a href="{% url 'shop:product_list' %}" class="button light">
             continue shopping
         </a>
-        <a href="#" class="button">Checkout</a>
+        <a href="{% url "orders:order_create" %}" class="button">
+            Checkout
+        </a>
     </p>
 {% endblock content %}
