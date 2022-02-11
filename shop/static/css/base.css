@@ -183,16 +183,22 @@ ul.errorlist {
     margin-right:-220px;
     overflow:hidden;
 }
-
-.product-list .item {
-    width:25%;
+.product-display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 1rem;
+    margin-right: 7rem;
+}
+.product-display .item {
     padding:10px 20px 10px 0;
-    float:left;
     text-align:center;
     line-height:1.2;
+    box-shadow: 7px 10px 8px -7px rgba(0,0,0,0.57);
+
 }
 
-.product-list .item img {
+.product-display .item img {
     width:100%;
     margin-bottom:8px;
 }
