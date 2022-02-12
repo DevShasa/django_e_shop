@@ -1,4 +1,12 @@
 {% extends 'shop/base.html' %}
 {% block title %}
-    Wut
+    Thank you
 {% endblock title %}
+
+{% block content %}
+    <h1>Thank you</h1>
+    <p>
+        Your order has been successfully completed, your order number 
+        <strong>{{ order.id }}</strong>
+    </p>
+{% endblock content %}
