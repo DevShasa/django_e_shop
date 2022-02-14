@@ -8,6 +8,7 @@ django = "==3..."
 pillow = "==7.0.0"
 celery = "==4.2.2"
 braintree = "==3.59.0"
+weasyprint = "==51"
 
 [dev-packages]
 
