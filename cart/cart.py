@@ -26,7 +26,7 @@ class Cart(object):
 
     def add(self, product, quantity=1, override_quantity=False):
         '''
-        Add a product to the cart to update its quantity 
+        Add a product to the cart to update it's quantity 
         '''
         product_id = str(product.id) #cos id is an integer
         if product_id not in self.cart:
