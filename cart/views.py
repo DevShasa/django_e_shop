@@ -4,7 +4,7 @@ from shop.models import Product
 from .cart import Cart 
 from .forms import CartAddProductForm
 
-@require_POST # ONly allow POST requests 
+@require_POST # Only allow POST requests 
 def cart_add(request,product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
