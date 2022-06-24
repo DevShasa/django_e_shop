@@ -11,9 +11,13 @@ def cart_add(request,product_id):
     # Take contents of request.post and pass them to CartAddProductForm 
     form = CartAddProductForm(request.POST) # Fetch post object from request body 
     if form.is_valid():
-        cd = form.cleaned_data
+        cartData = form.cleaned_data
         # this will append cart item to session session.cart.{products}
-        cart.add(product=product, quantity=cd['quantity'], override_quantity=cd['override'])
+        cart.add(
+            product=product, 
+            quantity=cartData['quantity'], 
+            override_quantity=cartData['override']
+        )
     
     return redirect('cart:cart_detail')
 

@@ -16,10 +16,11 @@ class Cart(object):
         }
         """
         self.session = request.session
-        # get the session object
+        # get the session object if present
         cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
-            # Save an empty cart in the session
+            # Save an empty cart in the session if cart is not present
+            # session = { cart:{} }
             cart = self.session[settings.CART_SESSION_ID] = {}
 
         self.cart  = cart
@@ -30,6 +31,7 @@ class Cart(object):
         '''
         product_id = str(product.id) #cos id is an integer
         if product_id not in self.cart:
+            # cart = { 'product_id': {'quantity': 0, 'price':product.price }
             self.cart[product_id] = {'quantity': 0, 'price': str(product.price)}
 
         if override_quantity:
@@ -64,6 +66,7 @@ class Cart(object):
         cart = self.cart.copy()
         for product in products:
             # Append modelproduct to cartproduct as "product"
+            # add field product to car t object which is a db product object
             cart[str(product.id)]['product'] = product
         
         for item in cart.values():
@@ -75,7 +78,6 @@ class Cart(object):
             '''
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']
-            
             yield item
             
     def __len__(self):
